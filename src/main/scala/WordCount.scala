@@ -17,7 +17,7 @@ object WordCount {
 
   def main(args: Array[String]) {
     Logger.getLogger("org").setLevel(Level.ERROR)
-    val sortedWords = rddCreation("src/resources/book.txt")
+    val sortedWords = rddCreation("src/main/resources/book.txt")
 
     for (word <- sortedWords) {
       val count = word._1
