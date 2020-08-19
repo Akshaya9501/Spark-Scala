@@ -2,14 +2,14 @@ import org.apache.log4j.{Level, Logger}
 import org.apache.spark.sql.SparkSession
 object FakeFriends {
 
-  case class Person(ID: Int, name: String, age: Int, count: Int)
+ private case class Person(ID: Int, name: String, age: Int, count: Int)
 
   def mapper(lines: String): Person = {
     val fields = lines.split(',')
     val person: Person = Person(fields(0).toInt, fields(1), fields(2).toInt, fields(3).toInt)
      person
   }
-def sparkSession: SparkSession ={
+private def sparkSession: SparkSession ={
   SparkSession
     .builder
     .appName("FakeFriends")
